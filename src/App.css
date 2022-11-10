@@ -22,3 +22,25 @@ body {
   font-family: Montserrat;
   color: white;
 }
+
+.button {
+  background-color: #00a39c;
+  border: 0px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 10px;
+  font-family: Montserrat;
+  color: white;
+  font-size: 20px;
+  transition-duration: 0.2s;
+}
+
+.button:hover {
+  background-color: #008881;
+}
+
+.button:active {
+  background-color: #006d67;
+}

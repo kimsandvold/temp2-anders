@@ -12,12 +12,13 @@ function Button(){
 
     const style = {
         position: 'absolute',
-        top: '15vh'
+        top: '150px',
+        left: '50px',
     }
 
     return (
         <div>
-            <button onClick={trekk} style={style}>trekk</button>
+            <button onClick={trekk} className='button' style={style}>Trekk</button>
         </div>
     )
 }
