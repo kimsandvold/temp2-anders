@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
 body {
   margin:0;
   padding: 0;
@@ -43,4 +45,9 @@ body {
 
 .button:active {
   background-color: #006d67;
+}
+
+.results {
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
 }

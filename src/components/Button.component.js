@@ -1,24 +1,25 @@
-import React from "react"
+import {useState} from "react"
 
 function Button(){
     const min = 0
     const max = 30
 
+    const [trekkNum,setTrekkNum] = useState(0);
+
     function trekk(){
         const rand = Math.floor(Math.random() * (max + 1) - min) + min
     
-        console.log(rand)
+        setTrekkNum(rand)
     }
-
-    const style = {
-        position: 'absolute',
-        top: '150px',
-        left: '50px',
-    }
-
+    
     return (
-        <div>
-            <button onClick={trekk} className='button' style={style}>Trekk</button>
+        <div style={{
+            position: 'absolute',
+            top: '150px',
+            left: '50px',
+        }}>
+            <button onClick={trekk} className='button' >Trekk</button>
+            <span className="results" style={{marginLeft: '10px'}}>Resultat: {trekkNum}</span>
         </div>
     )
 }
