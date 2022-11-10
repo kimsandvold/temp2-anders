@@ -14,12 +14,16 @@ function Button(){
     
     return (
         <div style={{
-            position: 'absolute',
-            top: '150px',
-            left: '50px',
+            display: "flex",
+            flexDirection: 'column',
+            alignSelf: 'center',
+            width: '100%',
+            alignContent: 'center',
+            alignItems: 'center',
+            marginTop: '100px'
         }}>
+             <span className="results" style={{marginBottom: '30px'}}>Resultat: {trekkNum}</span>
             <button onClick={trekk} className='button' >Trekk</button>
-            <span className="results" style={{marginLeft: '10px'}}>Resultat: {trekkNum}</span>
         </div>
     )
 }
