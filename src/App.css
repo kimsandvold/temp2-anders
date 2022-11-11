@@ -22,3 +22,9 @@ body {
   font-family: Montserrat;
   color: white;
 }
+
+.displayWinner {
+  font-family: Montserrat;
+  position: absolute;
+  right: 945px;
+}
