@@ -1,6 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
 
+:root {
+  --headerHeight: 100px;
+  --footerHeight: 100px;
+}
+
 body {
   margin:0;
   padding: 0;
@@ -16,13 +21,21 @@ body {
 
 .Header {
   background-color: #00A499;
-  height: 100px;
+  height: var(--headerHeight);
   padding: 10px;
 }
 
 .topTekst {
   font-family: Montserrat;
   color: white;
+}
+
+.footer {
+  width: 100vw;
+  height: var(--footerHeight);
+  position: absolute;
+  bottom: 0px;
+  background-color: #00a39c;
 }
 
 .button {
@@ -51,3 +64,13 @@ body {
   font-family: 'Roboto', sans-serif;
   font-size: 30px;
 }
+
+table {
+  height: calc(100vh - var(--headerHeight) - var(--footerHeight));
+  width: 100vw;
+  border: 1px solid;
+}
+
+/* .container {
+
+} */
