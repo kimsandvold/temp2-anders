@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
 body {
   margin:0;
   padding: 0;
@@ -23,8 +25,29 @@ body {
   color: white;
 }
 
-.displayWinner {
+.button {
+  background-color: #00a39c;
+  border: 0px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 10px;
   font-family: Montserrat;
-  position: absolute;
-  right: 945px;
+  color: white;
+  font-size: 20px;
+  transition-duration: 0.2s;
+}
+
+.button:hover {
+  background-color: #008881;
+}
+
+.button:active {
+  background-color: #006d67;
+}
+
+.results {
+  font-family: 'Roboto', sans-serif;
+  font-size: 30px;
 }

@@ -1,7 +1,7 @@
 import './App.css';
 import logo from './rubichvit.png';
 import Button from './components/Button.component.js';
-import DisplayWinner from './components/DisplayWinner.component';
+import Footer from './components/footer.component';
 
 function App() {
   return (
@@ -12,6 +12,7 @@ function App() {
       </div>
       <DisplayWinner/>
       <Button />
+      <Footer />
     </div>
   );
 }
