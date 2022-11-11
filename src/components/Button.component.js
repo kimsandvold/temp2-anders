@@ -19,8 +19,7 @@ function Button(){
             alignSelf: 'center',
             width: '100%',
             alignContent: 'center',
-            alignItems: 'center',
-            marginTop: '100px'
+            alignItems: 'center'
         }}>
              <span className="results" style={{marginBottom: '30px'}}>Resultat: {trekkNum}</span>
             <button onClick={trekk} className='button' >Trekk</button>

@@ -1,8 +1,7 @@
 import './App.css';
-import logo from './rubichvit.png';
 import Button from './components/Button.component.js';
-import Footer from './components/footer.component';
-import Lotteri from './pages/lotteri.page';
+import Footer from './components/Footer.component';
+import Lotteri from './pages/Lotteri.page';
 
 function App() {
   return (
