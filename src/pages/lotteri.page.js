@@ -1,4 +1,6 @@
-import Footer from "../components/footer.component"
+import Button from "../components/Button.component"
+import Footer from "../components/Footer.component"
+import Header from "../components/Header.component"
 
 
 const Lotteri = () => {
@@ -6,15 +8,18 @@ const Lotteri = () => {
 
     return (
         <div>
+            <Header />
             <table>
-                <tr>
-                    <td className="container">
-
-                    </td>
-                    <td className="sideBar">
-                        
-                    </td>
-                </tr>
+                <tbody>
+                    <tr>
+                        <td className="container">
+                            <Button/>
+                        </td>
+                        <td className="sideBar">
+                            
+                        </td>
+                    </tr>
+                </tbody>
             </table>
             <Footer/>
         </div>
