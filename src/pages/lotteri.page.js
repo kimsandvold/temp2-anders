@@ -23,21 +23,17 @@ const Lotteri = () => {
     return (
         <div>
             <Header />
-            <table>
-                <tbody>
-                    <tr>
-                        <td className="container">
-                            <div className="results" style={{fontSize: '20px', marginTop: '-150px'}} >{drawState}</div>
-                            <div className={'results vinner'}>{winner}</div>
-                            <Button amountOfParticipants={chosenParticipants.length} numHandler={catchNumber} setDrawState={setDrawState} displayError={setErrorMessage} />
-                            <div className='errorMessage'>{errorMessage}</div>
-                        </td>
-                        <td className="sideBar">
-                            <ParticipantList participantHandler={catchParticipants} />
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+            <div className="container">
+                <div className="mainContent">
+                    <div className="results" style={{fontSize: '20px', marginTop: '-150px'}} >{drawState}</div>
+                    <div className={'results vinner'}>{winner}</div>
+                    <Button amountOfParticipants={chosenParticipants.length} numHandler={catchNumber} setDrawState={setDrawState} displayError={setErrorMessage} />
+                    <div className='errorMessage'>{errorMessage}</div>
+                </div>
+                <div className="sidebar">
+                    <ParticipantList participantHandler={catchParticipants} />
+                </div>
+            </div>
             <Footer/>
         </div>
     )
