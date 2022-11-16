@@ -5,8 +5,15 @@ function ParticipantList(props) {
     const participants = ['Anders', 'Kim', 'Vegard', 'Sander', 'Gjermund', 'Helene', 'Lisa', 'Per Magne', 'Rune', 'Johan', 'Anders Jr.', 'Britt', 'Anton', 'Magnus', 'Gudmund']
 
     const [selectedParticipants, setSelectedParticipants] = useState([])
+    const [selectAllDisabled, setSelectAllDisabled] = useState(false)
+
     useEffect(() => {
         participantHandler(selectedParticipants)
+        if(participants.length == selectedParticipants.length) {
+            setSelectAllDisabled(true)
+        }else {
+            setSelectAllDisabled(false)
+        }
     }, [selectedParticipants])
 
     const handleCheckbox = (event) => {
@@ -43,7 +50,7 @@ function ParticipantList(props) {
     return (
         <div className="participantList">
             <div>
-                {selectedParticipants.length} av {participants.length} valgt <button onClick={selectAll}>Velg alle</button>
+                {selectedParticipants.length} av {participants.length} valgt <button onClick={selectAll} disabled={selectAllDisabled}>Velg alle</button>
             </div>
             {participants.map((participant, index) => {
                 return (
