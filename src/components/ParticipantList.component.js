@@ -16,8 +16,23 @@ function ParticipantList(props) {
             existing.push(name)
         }else {
             for (let i = 0; i < existing.length; i++) {
-                if (existing[i] == name){
+                if (existing[i] === name){
                     existing.splice(i, 1)
+                }
+            }
+        }
+
+        setSelectedParticipants(existing)
+    }
+
+    const selectAll = () => {
+        const inputs = document.getElementsByTagName('input')
+        const existing = [...selectedParticipants]
+        for(let i = 0; i < inputs.length; i++) {
+            if(inputs[i].type.toLowerCase() === 'checkbox') {
+                if (inputs[i].checked == false) {
+                    inputs[i].checked = true
+                    existing.push(inputs[i].value)
                 }
             }
         }
@@ -28,7 +43,7 @@ function ParticipantList(props) {
     return (
         <div className="participantList">
             <div>
-                {selectedParticipants.length} av {participants.length} valgt
+                {selectedParticipants.length} av {participants.length} valgt <button onClick={selectAll}>Velg alle</button>
             </div>
             {participants.map((participant, index) => {
                 return (
