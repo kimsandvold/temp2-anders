@@ -59,6 +59,10 @@ body {
   background-color: #008881;
 }
 
+.button:disabled {
+  background-color: rgba(0, 136, 129, 0.5);
+}
+
 .button:active {
   background-color: #006d67;
 }

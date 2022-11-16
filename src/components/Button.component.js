@@ -6,10 +6,12 @@ function Button(props){
     const max = amountOfParticipants
 
     const [trekkNum,setTrekkNum] = useState();
+    const [buttonDisabled, setButtonDisabled] = useState(false);
 
     const trekk = (i) => {
         if (amountOfParticipants > 1){
             setDrawState('Trekker')
+            setButtonDisabled(true)
             if (i > 0) {
                 setTrekkNum(i - (Math.floor(i / amountOfParticipants) * amountOfParticipants))
                 setTimeout(trekk, 150 - i, i - 1)
@@ -17,13 +19,14 @@ function Button(props){
                 const rand = Math.floor(Math.random() * max)
                 setTrekkNum(rand)
                 setDrawState('Vinner')
+                setButtonDisabled(false)
             }
         }
     }
 
     useEffect(() => {
             numHandler(trekkNum)
-    }, [trekkNum])
+    }, [trekkNum, buttonDisabled])
     
     return (
         <div style={{
@@ -34,7 +37,7 @@ function Button(props){
             alignContent: 'center',
             alignItems: 'center'
         }}>
-            <button onClick={() => trekk(100)} className='button' >Trekk</button>
+            <button onClick={() => trekk(100)} className='button' disabled={buttonDisabled} >Trekk</button>
         </div>
     )
 }
