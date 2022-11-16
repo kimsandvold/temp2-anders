@@ -1,16 +1,29 @@
-import {useState} from "react"
+import {useEffect, useState} from "react"
 
-function Button(){
-    const min = 0
-    const max = 30
+function Button(props){
+    const {amountOfParticipants, numHandler, setDrawState} = props
 
-    const [trekkNum,setTrekkNum] = useState(0);
+    const max = amountOfParticipants
 
-    function trekk(){
-        const rand = Math.floor(Math.random() * (max + 1) - min) + min
-    
-        setTrekkNum(rand)
+    const [trekkNum,setTrekkNum] = useState();
+
+    const trekk = (i) => {
+        if (amountOfParticipants > 1){
+            setDrawState('Trekker')
+            if (i > 0) {
+                setTrekkNum(i - (Math.floor(i / amountOfParticipants) * amountOfParticipants))
+                setTimeout(trekk, 150 - i, i - 1)
+            } else {
+                const rand = Math.floor(Math.random() * max)
+                setTrekkNum(rand)
+                setDrawState('Vinner')
+            }
+        }
     }
+
+    useEffect(() => {
+            numHandler(trekkNum)
+    }, [trekkNum])
     
     return (
         <div style={{
@@ -21,8 +34,7 @@ function Button(){
             alignContent: 'center',
             alignItems: 'center'
         }}>
-             <span className="results" style={{marginBottom: '30px'}}>Resultat: {trekkNum}</span>
-            <button onClick={trekk} className='button' >Trekk</button>
+            <button onClick={() => trekk(100)} className='button' >Trekk</button>
         </div>
     )
 }
