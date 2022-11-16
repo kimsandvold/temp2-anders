@@ -26,8 +26,8 @@ const Lotteri = () => {
                 <tbody>
                     <tr>
                         <td className="container">
-                            <div className="results" style={{fontSize: '20px', marginTop: '100px'}} >{drawState}</div>
-                            <div className={`results ${drawState}`}>{winner}</div>
+                            <div className="results" style={{fontSize: '20px', marginTop: '-150px'}} >{drawState}</div>
+                            <div className={'results vinner'}>{winner}</div>
                             <Button amountOfParticipants={chosenParticipants.length} numHandler={catchNumber} setDrawState={setDrawState} />
                         </td>
                         <td className="sideBar">
