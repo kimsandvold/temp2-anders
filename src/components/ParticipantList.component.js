@@ -49,12 +49,15 @@ function ParticipantList(props) {
 
     return (
         <div className="participantList">
-            <div>
+            <div style={{
+                marginLeft: '10px',
+                marginTop: '10px'
+            }}>
                 {selectedParticipants.length} av {participants.length} valgt <button onClick={selectAll} disabled={selectAllDisabled}>Velg alle</button>
             </div>
             {participants.map((participant, index) => {
                 return (
-                    <label key={index}>
+                    <label key={index} className={'participant'}>
                         <input type={'checkbox'} value={participant} onClick={handleCheckbox} />{participant}
                     </label>
                 )

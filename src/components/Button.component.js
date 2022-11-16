@@ -11,7 +11,7 @@ function Button(props){
 
     const trekk = (i) => {
         if (amountOfParticipants > 1){
-            setDrawState('Trekker')
+            setDrawState('drawing')
             setButtonDisabled(true)
             setErrorMessage('')
             if (i > 0) {
@@ -20,7 +20,7 @@ function Button(props){
             } else {
                 const rand = Math.floor(Math.random() * max)
                 setTrekkNum(rand)
-                setDrawState('Vinner')
+                setDrawState('done')
                 setButtonDisabled(false)
             }
         }else {

@@ -2,13 +2,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
 
 :root {
-  --headerHeight: 100px;
-  --footerHeight: 100px;
+  --headerColor: #00A499;
+  --backgroundColor: rgb(255,255,255);
+  --sidebarColor: #eeeeee;
 }
 
 body {
   margin:0;
   padding: 0;
+  background-color: var(--backgroundColor);
 }
 
 .logo {
@@ -20,7 +22,7 @@ body {
 }
 
 .Header {
-  background-color: #00A499;
+  background-color: var(--headerColor);
   height: 100px;
   padding: 10px;
 }
@@ -28,6 +30,8 @@ body {
 .topTekst {
   font-family: Montserrat;
   color: white;
+  position: absolute;
+  top: 50px;
 }
 
 .footer {
@@ -72,13 +76,13 @@ body {
 
 .container {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: wrap-reverse;
   height: calc(100vh - 120px);
 }
 
 .mainContent {
   width: auto;
-  min-width: 500px;
+  min-width: 200px;
   min-height: 600px;
   flex: 80%;
   display: flex;
@@ -90,7 +94,7 @@ body {
 
 .sidebar {
   min-width: 250px;
-  background-color: #eeeeee;
+  background-color: var(--sidebarColor);
   flex: 20%;
 }
 
@@ -100,6 +104,16 @@ body {
   display: flex;
   flex-direction: column;
   vertical-align: top;
+  margin-bottom: 50px;
+}
+
+.participant {
+  margin-left: 20px;
+  transition-duration: 0.2s;
+}
+
+.participant:hover {
+  background-color: rgba(0, 0, 0, 0.05);
 }
 
 .vinner {
@@ -113,4 +127,28 @@ body {
   color: red;
   text-align: center;
   margin-top: 20px;
+}
+
+.colorThemeMenu {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+
+.colorThemeButton {
+  margin-left: 10px;
+  margin-right: 10px;
+  height: 30px;
+  border-radius: 15px;
+  flex-grow: 1;
+  transition-duration: 0.2s;
+}
+
+.colorThemeButton:hover {
+  scale: 110%;
+}
+
+.colorThemeButton:disabled {
+  background-color: black;
+  color: white;
 }

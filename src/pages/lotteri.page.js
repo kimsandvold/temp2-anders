@@ -3,6 +3,7 @@ import Footer from "../components/Footer.component"
 import Header from "../components/Header.component"
 import ParticipantList from "../components/ParticipantList.component"
 import { useState } from "react"
+import ThemeSelect from "../components/ThemeOptions.component"
 
 
 const Lotteri = () => {
@@ -12,8 +13,9 @@ const Lotteri = () => {
     const [errorMessage, setErrorMessage] = useState('')
 
     const catchParticipants = (participantArray) => {
-        // console.log({participantArray})
-        setChosenParticipants(participantArray)
+        if (drawState != 'drawing') {
+            setChosenParticipants(participantArray)
+        }
     }
 
     const catchNumber = (num) => {
@@ -31,6 +33,7 @@ const Lotteri = () => {
                 </div>
                 <div className="sidebar">
                     <ParticipantList participantHandler={catchParticipants} />
+                    <ThemeSelect />
                 </div>
             </div>
         </div>
