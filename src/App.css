@@ -104,3 +104,10 @@ td {
   color: #00a499;
   -webkit-text-stroke: 1px black;
 }
+
+.errorMessage {
+  font-family: 'Roboto', sans-serif;
+  color: red;
+  text-align: center;
+  margin-top: 20px;
+}
