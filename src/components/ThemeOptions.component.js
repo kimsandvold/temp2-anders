@@ -62,7 +62,6 @@ const ThemeSelect = () => {
 
     return (
         <div className="themeOptions">
-            <hr />
             <button className="dropDownButton" onClick={themeDropDown}>Tema</button>
             <div className="colorThemeMenu">
                 {Object.keys(themes).map((themeKey, i) => {
@@ -77,7 +76,6 @@ const ThemeSelect = () => {
                     )
                 })}
             </div>
-            <hr />
         </div>
     )
 }
