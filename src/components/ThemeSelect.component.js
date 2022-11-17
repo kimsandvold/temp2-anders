@@ -25,7 +25,7 @@ const ThemeSelect = () => {
         }
     }
 
-    const [currentThemeKey, setCurrentThemeKey] = useState('Dark')
+    const [currentThemeKey, setCurrentThemeKey] = useState('Light')
     const [lastThemeKey, setLastThemeKey] = useState()
     const [themeDropDownActive, setThemeDropDownActive] = useState(false)
 

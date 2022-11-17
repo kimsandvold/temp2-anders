@@ -37,14 +37,21 @@ function ParticipantList(props) {
         const existing = [...selectedParticipants]
         for(let i = 0; i < inputs.length; i++) {
             if(inputs[i].type.toLowerCase() === 'checkbox') {
-                if (inputs[i].checked == false) {
-                    inputs[i].checked = true
-                    existing.push(inputs[i].value)
+                if (selectAllDisabled) {
+                    inputs[i].checked = false
+                }else {
+                    if (inputs[i].checked == false) {
+                        inputs[i].checked = true
+                        existing.push(inputs[i].value)
+                    }
                 }
             }
         }
-
-        setSelectedParticipants(existing)
+        if (selectAllDisabled) {
+            setSelectedParticipants([])
+        }else {
+            setSelectedParticipants(existing)
+        }
     }
 
     return (
@@ -53,7 +60,13 @@ function ParticipantList(props) {
                 marginLeft: '10px',
                 marginTop: '10px'
             }}>
-                {selectedParticipants.length} av {participants.length} valgt <button onClick={selectAll} disabled={selectAllDisabled}>Velg alle</button>
+                {selectedParticipants.length} av {participants.length} valgt <button onClick={selectAll} /*disabled={selectAllDisabled}*/>
+                    {function(){
+                        if(selectAllDisabled) {
+                            return 'Fjern alle'
+                        }else {return 'Velg alle'}
+                    }()}
+                </button>
             </div>
             {participants.map((participant, index) => {
                 return (
