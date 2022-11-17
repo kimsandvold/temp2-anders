@@ -5,12 +5,21 @@
   --headerColor: #00A499;
   --backgroundColor: rgb(255,255,255);
   --sidebarColor: #eeeeee;
+  --textColor: black;
 }
 
 body {
   margin:0;
   padding: 0;
   background-color: var(--backgroundColor);
+  color: var(--textColor);
+  transition-duration: 0.2s;
+  overflow-x: hidden;
+}
+
+.hidden {
+  display: none;
+  position:absolute;
 }
 
 .logo {
@@ -41,7 +50,7 @@ body {
 }
 
 .button {
-  background-color: #00a39c;
+  background-color: var(--headerColor);
   border: 0px;
   padding-left: 20px;
   padding-right: 20px;
@@ -57,11 +66,14 @@ body {
 }
 
 .button:hover {
-  background-color: #008881;
+  /* background-color: #008881; */
+  filter:brightness(0.85);
 }
 
 .button:disabled {
-  background-color: rgba(0, 136, 129, 0.5);
+  /* background-color: rgba(0, 136, 129, 0.5); */
+  filter:brightness(0.85);
+  opacity: 0.5;
 }
 
 .button:active {
@@ -129,19 +141,29 @@ body {
   margin-top: 20px;
 }
 
+.themeOptions {
+  font-size: 20px;
+  font-family: 'Roboto', sans-serif;
+  margin-left: 10px;
+}
+
 .colorThemeMenu {
+  margin-top: 20px;
   display: flex;
   flex-direction: row;
   align-items: stretch;
 }
 
 .colorThemeButton {
+  color: var(--textColor);
+  background-color: rgba(0, 0, 0, 0);
   margin-left: 10px;
   margin-right: 10px;
   height: 30px;
   border-radius: 15px;
   flex-grow: 1;
   transition-duration: 0.2s;
+  border:var(--textColor) solid 2px;
 }
 
 .colorThemeButton:hover {
@@ -150,5 +172,19 @@ body {
 
 .colorThemeButton:disabled {
   background-color: black;
+  border: black solid 2px;
   color: white;
+}
+
+.dropDownButton {
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  color: var(--textColor);
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.5rem;
+  transition-duration: 0.2s;
+}
+
+.dropDownButton:hover {
+  filter: brightness(0.85);
 }
