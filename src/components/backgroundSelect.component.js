@@ -3,9 +3,9 @@ import { useEffect, useState } from "react"
 const BackgroundSelect = (props) => {
     const {setBackground} = props
 
-    const backgroundIDs = ['Wine1']
+    const backgroundIDs = ['Wine1', 'Beer1', 'Giftcard', 'Julebrus']
 
-    const [dropDownActive, setDropDownActive] = useState(true)
+    const [dropDownActive, setDropDownActive] = useState(false)
     const [currentBackgroundKey, setCurrentBackgroundKey] = useState('')
 
     useEffect(() => {
@@ -41,7 +41,7 @@ const BackgroundSelect = (props) => {
             <button className="dropDownButton" onClick={DropDown}>Bakgrunn</button>
             <div style={{
                 display: 'flex',
-                flexDirection: 'column'
+                flexWrap: 'wrap'
             }}>
                 {backgroundIDs.map((bgID, index) => {
                     return(
