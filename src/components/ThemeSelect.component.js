@@ -24,9 +24,6 @@ const ThemeSelect = () => {
             textColor: 'rgb(255, 255, 255)'
         }
     }
-    const dropDownStates = {
-        colorTheme: 'hidden'
-    }
 
     const [currentThemeKey, setCurrentThemeKey] = useState('Dark')
     const [lastThemeKey, setLastThemeKey] = useState()

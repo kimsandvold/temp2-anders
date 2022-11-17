@@ -3,7 +3,8 @@ import Footer from "../components/Footer.component"
 import Header from "../components/Header.component"
 import ParticipantList from "../components/ParticipantList.component"
 import { useState } from "react"
-import ThemeSelect from "../components/ThemeOptions.component"
+import ThemeSelect from "../components/ThemeSelect.component"
+import BackgroundSelect from "../components/backgroundSelect.component"
 
 
 const Lotteri = () => {
@@ -11,6 +12,7 @@ const Lotteri = () => {
     const [winner, setWinner] = useState('...')
     const [drawState, setDrawState] = useState(' ')
     const [errorMessage, setErrorMessage] = useState('')
+    const [backgroundImage, setBackgroundImage] = useState()
 
     const catchParticipants = (participantArray) => {
         if (drawState != 'drawing') {
@@ -26,14 +28,19 @@ const Lotteri = () => {
         <div>
             <Header />
             <div className="container">
-                <div className="mainContent">
-                    <div className={'results vinner'}>{winner}</div>
-                    <Button amountOfParticipants={chosenParticipants.length} numHandler={catchNumber} setDrawState={setDrawState} displayError={setErrorMessage} />
-                    <div className='errorMessage'>{errorMessage}</div>
+                <div className="mainContent" style={{
+                    backgroundImage: backgroundImage
+                }}>
+                    <div className="resultSegment">
+                        <div className={'results vinner'}>{winner}</div>
+                        <Button amountOfParticipants={chosenParticipants.length} numHandler={catchNumber} setDrawState={setDrawState} displayError={setErrorMessage} />
+                        <div className='errorMessage'>{errorMessage}</div>
+                    </div>
                 </div>
                 <div className="sidebar">
                     <ParticipantList participantHandler={catchParticipants} />
                     <ThemeSelect />
+                    <BackgroundSelect setBackground={setBackgroundImage} />
                 </div>
             </div>
         </div>
