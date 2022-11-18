@@ -1,10 +1,9 @@
 import Button from "../components/Button.component"
-import Footer from "../components/Footer.component"
 import Header from "../components/Header.component"
 import ParticipantList from "../components/ParticipantList.component"
 import { useState } from "react"
 import ThemeSelect from "../components/ThemeSelect.component"
-import BackgroundSelect from "../components/backgroundSelect.component"
+import BackgroundSelect from "../components/BackgroundSelect.component"
 
 
 const Lotteri = () => {
